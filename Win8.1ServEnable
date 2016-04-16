@@ -1,0 +1,14 @@
+@echo off
+
+set services= BITS BrokerInfrastructure BFE EventSystem ^
+CryptSvc DcomLaunch Dnscache gpsvc LSM MMCSS NlaSvc ^
+nsi Power RPCEptMapper SamSs wscsvc ShellHWDetection ^
+sppsvc SysMain SENS SystemEventsBroker Schedule lmhosts ^
+Themes ProfSvc AudioSrv AudioEndpointBuilder Wcmsvc ^
+WinDefend EventLog MpsSvc FontCache Winmgmt WSearch ^
+LanmanWorkstation
+
+
+
+FOR %%i in (%services%) DO sc config %%i start= auto
+PAUSE
