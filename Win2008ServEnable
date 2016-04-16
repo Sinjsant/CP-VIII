@@ -1,0 +1,19 @@
+@echo off
+
+set services= AeLookupSvc AppHostSvc BITS BFE ^
+EventSystem Browser CryptSvc DcomLaunch UxSms ^
+Dhcp DPS TrkWks MSDTC Dnscache gpsvc IISADMIN ^
+IKEEXT IAS iphlpsvc isactrl MSSQL$ISARS ^
+ADAM_ISASTGCTRL KtmRm MSSQL$MSFW fwsrv ^
+isasched ISASTG netprofm NlaSvc nsi PlugPlay ^
+RPCSs ReportServer$ISARS seclogon SamSs ^
+LanmanServer ShellHWDetection slsvc ^
+SQLBrowser SQLWriter SENS Schedule lmhosts ^
+TermService ProfSvc WerSvc Eventlog MpsSvc ^
+Winmgmt WinRM w32Time wuauserv ^
+LanmanWorkstation W3SVC xmonitor 
+
+
+
+FOR %%i in (%services%) DO sc config %%i start= auto
+PAUSE
