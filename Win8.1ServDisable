@@ -1,0 +1,15 @@
+@echo off
+
+set services= AppHostSvc AppMgmt aspnet_state bthserv PeerDistSvc CertPropSvc ^
+c2wts NfsClnt TrkWks DsRoleSvc Fax fhsvc IISADMIN SharedAccess ^
+IEEtwCollectorService iphlpsvc LPDSVC MSMQTriggers MSMQ ftpsvc ^
+MSiSCSI NetMsmqActivator NetPipeActivator NetTcpActivator NetTcpPortSharing ^
+Netlogon napagent CscService RasAuto RasMan SessionEnv UmRdpService ^
+TermService RpcLocator RemoteRegistry iprip RemoteAccess SensrSvc ^
+LanmanServer simptcp SCardSvr ScDeviceEnum SCPolicySvc SNMP SNMPTRAP ^
+TlntSvr WMSVC WbioSrvc wcncsvc fsvc WMPNetworkSvc FontCache3.0.0.0 ^
+WAS W3SVC Spooler
+
+
+FOR %%i in (%services%) DO net stop %%i & sc config %%i start= disabled
+PAUSE
