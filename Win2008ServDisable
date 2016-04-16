@@ -1,0 +1,14 @@
+@echo off
+
+set services= AudioEndpointBuilder Audiosrv ^
+CscService hidserv IPBusEnum PolicyAgent ^
+RasAuto RemoteRegistry SCardSvr SCPolicySvc ^
+SharedAccess SSDPSRV Themes upnphost DNS ^
+nfssvc nfsclnt MSSQLServerADHelper SNMPTRAP ^
+RpcLocator
+
+
+
+
+FOR %%i in (%services%) DO net stop %%i & sc config %%i start= disabled
+PAUSE
