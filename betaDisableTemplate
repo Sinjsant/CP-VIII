@@ -1,0 +1,3 @@
+FOR /F "tokens=*" %%i in ([disable.txt]) DO net stop %%i & sc config %%i start= disabled
+
+PAUSE
